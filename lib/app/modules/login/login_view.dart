@@ -21,7 +21,7 @@ class LoginView extends GetView<LoginController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Icon(
-              Icons.person,
+              Icons.account_circle_rounded,
               size: 80,
             ),
 
@@ -42,7 +42,7 @@ class LoginView extends GetView<LoginController> {
                     controller.number.value = value;
                   },
                   decoration: const InputDecoration(
-                      icon: Icon(Icons.access_alarm_outlined),
+                      icon: Icon(Icons.keyboard),
                       border: OutlineInputBorder(),
                       labelText: 'Mobile Number',
                       hintText: 'Enter 10 digit Mobile Number'),
