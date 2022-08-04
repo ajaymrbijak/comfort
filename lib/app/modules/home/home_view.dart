@@ -9,14 +9,16 @@ class HomeView extends GetView<HomeController> {
   Widget build(Object context) {
     GetStorage get = GetStorage();
     return MaterialApp(
-      themeMode: ThemeMode.dark,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
       home: Scaffold(
         appBar: AppBar(
           leading: const Icon(
             Icons.home_filled,
+            color: Colors.black,
           ),
           // leading:const Icon(Icons.arrow_back_ios_new_outlined,),
-          title: const Text("Home View "),
+          title: const Text("Comfort "),
           centerTitle: true,
         ),
         body: Center(
@@ -38,7 +40,10 @@ class HomeView extends GetView<HomeController> {
                       onPressed: () {
                         controller.logout();
                       },
-                      icon: const Icon(Icons.logout),
+                      icon: const Icon(
+                        Icons.logout,
+                        color: Color.fromARGB(255, 255, 132, 0),
+                      ),
                       label: const Text(
                         "Logout ",
                         style: TextStyle(
@@ -49,7 +54,7 @@ class HomeView extends GetView<HomeController> {
                       onPressed: () {
                         controller.back();
                       },
-                      icon: const Icon(Icons.close),
+                      icon: const Icon(Icons.close, color: Colors.red),
                       label: const Text(
                         "Exit ",
                         style: TextStyle(
