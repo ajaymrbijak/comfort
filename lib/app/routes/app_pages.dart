@@ -1,8 +1,8 @@
-import 'package:comfort/app/modules/home/home_view.dart';
+import 'package:comfort/app/modules/dashboard/home/home_view.dart';
 import 'package:comfort/app/modules/otp/otp_binding.dart';
 import 'package:comfort/app/modules/otp/otp_view.dart';
 import 'package:get/get.dart';
-import '../modules/home/home_binding.dart';
+import '../modules/dashboard/home/home_binding.dart';
 import '../modules/login/login_binding.dart';
 import '../modules/login/login_view.dart';
 import '../modules/splash/splash_binding.dart';
@@ -17,14 +17,9 @@ class AppPages {
         name: Routes.splash,
         page: () => const SplashView(),
         binding: SplashBinding()),
+    GetPage(name: Routes.home, page: () => HomeView(), binding: HomeBinding()),
     GetPage(
-        name: Routes.home,
-        page: () => const HomeView(),
-        binding: HomeBinding()),
-    GetPage(
-        name: Routes.login,
-        page: () => const LoginView(),
-        binding: LoginBinding()),
+        name: Routes.login, page: () => LoginView(), binding: LoginBinding()),
     GetPage(
       name: Routes.otp,
       page: () => const OtpView(),

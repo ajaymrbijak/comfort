@@ -6,7 +6,6 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
-
 import 'otp_controller.dart';
 
 class OtpView extends GetView<OtpController> {
@@ -17,7 +16,7 @@ class OtpView extends GetView<OtpController> {
     // String? otpvalue;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Otp "),
+        title: const Text("Comfort "),
         centerTitle: true,
       ),
       body: Column(
@@ -45,6 +44,10 @@ class OtpView extends GetView<OtpController> {
                     : () {
                         // Get.to(Routes.home);
                         controller.login(loginController.number.value);
+                        Get.snackbar("User", "Logined Successfully",
+                            snackPosition: SnackPosition.TOP,
+                            backgroundColor: Colors.black,
+                            colorText: Colors.white);
                       },
                 child: const Text(
                   'Verify',
