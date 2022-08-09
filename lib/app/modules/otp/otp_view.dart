@@ -1,5 +1,6 @@
 import 'package:comfort/app/modules/login/login_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_navigation/get_navigation.dart';
@@ -23,7 +24,7 @@ class OtpView extends GetView<OtpController> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text("Enter 6 digit Otp Number"),
+          Text('otp'.tr),
           Center(
             child: OTPTextField(
               length: 6,
@@ -44,14 +45,14 @@ class OtpView extends GetView<OtpController> {
                     : () {
                         // Get.to(Routes.home);
                         controller.login(loginController.number.value);
-                        Get.snackbar("User", "Logined Successfully",
+                        Get.snackbar('snackbaruser'.tr, 'snackbarlogindes'.tr,
                             snackPosition: SnackPosition.TOP,
                             backgroundColor: Colors.black,
                             colorText: Colors.white);
                       },
-                child: const Text(
-                  'Verify',
-                  style: TextStyle(fontSize: 34),
+                child: Text(
+                  'verify'.tr,
+                  style: const TextStyle(fontSize: 34),
                 )),
           ),
         ],

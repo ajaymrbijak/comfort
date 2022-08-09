@@ -19,7 +19,9 @@ class AppPages {
         binding: SplashBinding()),
     GetPage(name: Routes.home, page: () => HomeView(), binding: HomeBinding()),
     GetPage(
-        name: Routes.login, page: () => LoginView(), binding: LoginBinding()),
+        name: Routes.login,
+        page: () => const LoginView(),
+        binding: LoginBinding()),
     GetPage(
       name: Routes.otp,
       page: () => const OtpView(),

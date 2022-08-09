@@ -23,7 +23,8 @@ class HomeView extends GetView<HomeController> {
   final HomeController loadingPageController =
       Get.put(HomeController(), permanent: false);
   //SettingsController sController = SettingsController();
-  SettingsController sController = Get.put(SettingsController());
+  SettingsController sController =
+      Get.put<SettingsController>(SettingsController());
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +58,8 @@ class HomeView extends GetView<HomeController> {
       () => MediaQuery(
         data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
         child: SizedBox(
-          height: 59,
+          //ORIGINALLY IT HAS 59
+          height: 99,
           child: BottomNavigationBar(
             showUnselectedLabels: true,
             showSelectedLabels: true,
@@ -78,7 +80,7 @@ class HomeView extends GetView<HomeController> {
                     size: 20,
                   ),
                 ),
-                label: 'Home',
+                label: 'home'.tr,
                 backgroundColor: const Color.fromRGBO(36, 54, 101, 1.0),
               ),
               BottomNavigationBarItem(
@@ -89,7 +91,7 @@ class HomeView extends GetView<HomeController> {
                     size: 20,
                   ),
                 ),
-                label: 'Profile',
+                label: 'profile'.tr,
                 backgroundColor: const Color.fromRGBO(36, 54, 101, 1.0),
               ),
               BottomNavigationBarItem(
@@ -100,7 +102,7 @@ class HomeView extends GetView<HomeController> {
                     size: 20,
                   ),
                 ),
-                label: 'Settings',
+                label: 'settings'.tr,
                 backgroundColor: const Color.fromRGBO(36, 54, 101, 1.0),
               )
             ],

@@ -10,13 +10,18 @@ class SettingsController extends GetxController {
   final themeStorageKey = 'theme'.obs;
   RxBool isDarkMode = false.obs;
   //For Changing Appname
-  RxString statustitle = 'Comfort'.obs;
+  RxString statustitle = ''.obs;
   TextEditingController textController = TextEditingController();
+
+  //
+  // RxString applanguage = ''.obs;
 
   @override
   void onInit() {
     super.onInit();
-    isDarkMode.value = getStorage.read('theme');
+    // isDarkMode.value = getStorage.read('theme');
+    statustitle.value = getapptitle();
+    // applanguage.value = getapplanguage();
     name = getStorage.read("mobile");
   }
 
@@ -54,7 +59,8 @@ class SettingsController extends GetxController {
   }
 
   void changeThemeMode() {
-    Get.changeTheme(ThemeData.light());
+    Get.changeThemeMode(isDarkMode.value ? ThemeMode.dark : ThemeMode.light);
+    // Get.changeTheme(Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
     saveThemeMode(isDarkMode.value);
     // update();
   }
@@ -63,4 +69,20 @@ class SettingsController extends GetxController {
     getStorage.write('theme', isDarkMode);
     // print(getStorage.read(themeStorageKey));
   }
+
+  void savetile() {
+    getStorage.write('apptitle', statustitle.value);
+  }
+
+  String getapptitle() {
+    return getStorage.read('apptitle') ?? 'Comfort';
+  }
+
+  // void savelanguage() {
+  //   getStorage.write('applang', applanguage.value);
+  // }
+
+  // String getapplanguage() {
+  //   return getStorage.read('applang') ?? 'en_US';
+  // }
 }

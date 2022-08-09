@@ -8,13 +8,12 @@ void showRatingDialog() {
         starColor: Colors.amber,
         title: const Text('Rating Dialog'),
         // ignore: prefer_const_constructors
-        message: Text(
-            'Tap a star to set your rating. \nAdd more description here if you want.'),
+        message: Text('ratingdescription'.tr),
         image: Image.asset(
           "assets/logo.jpg",
           height: 100,
         ),
-        commentHint: " About the Application",
+        commentHint: " ratingaboutapp".tr,
         submitButtonText: 'Submit',
         onCancelled: () => print('cancelled'),
         onSubmitted: (response) {

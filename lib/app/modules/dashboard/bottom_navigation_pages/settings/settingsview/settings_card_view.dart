@@ -38,6 +38,7 @@ class SettingsCard extends StatelessWidget {
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Color.fromARGB(255, 0, 0, 0)),
+                // color: Get.theme.textTheme.bodyText1!.color),
               ),
               trailing: const Icon(
                 Icons.chevron_right_sharp,

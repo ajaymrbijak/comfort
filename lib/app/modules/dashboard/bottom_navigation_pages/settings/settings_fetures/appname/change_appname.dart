@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ChangeAppname extends StatelessWidget {
-  SettingsController control = Get.find<SettingsController>();
+  final SettingsController control = Get.find<SettingsController>();
   ChangeAppname({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("App Control")),
       body: Column(
         children: [
           Center(
@@ -19,18 +18,18 @@ class ChangeAppname extends StatelessWidget {
               // onChanged: (value) {
 
               // },
-              decoration: const InputDecoration(
-                  icon: Icon(Icons.keyboard),
-                  border: OutlineInputBorder(),
-                  labelText: 'App name',
-                  hintText: 'Enter a pricise name to the app'),
+              decoration: InputDecoration(
+                  icon: const Icon(Icons.keyboard),
+                  border: const OutlineInputBorder(),
+                  labelText: 'textlabeldialoge'.tr,
+                  hintText: 'descpdialog'.tr),
               keyboardType: TextInputType.text,
             ),
           ),
           ElevatedButton(
-            child: Text("Submit"),
+            child: Text('continue'.tr),
             onPressed: () {
-              control.statustitle.value = control.textController.value.text;
+              control.statustitle.value = control.textController.text;
             },
           )
         ],

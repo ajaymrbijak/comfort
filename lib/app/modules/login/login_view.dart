@@ -13,7 +13,8 @@ class LoginView extends GetView<LoginController> {
   Widget build(Object context) {
     return Scaffold(
       appBar: AppBar(
-        title: Obx(() => Text(nameController.statustitle.value)),
+        // title: Obx(() => Text(nameController.statustitle.value)),
+        title: const Text('Comfort'),
         centerTitle: true,
       ),
       body: Column(
@@ -27,8 +28,8 @@ class LoginView extends GetView<LoginController> {
           // ignore: prefer_const_constructors
           Padding(
             padding: const EdgeInsets.only(top: 82.0),
-            child: const Text("Enter Mobile Number",
-                style: TextStyle(
+            child: Text('mobileindication'.tr,
+                style: const TextStyle(
                     color: Color.fromARGB(255, 0, 0, 0), fontSize: 23.0)),
           ),
           Padding(
@@ -40,11 +41,11 @@ class LoginView extends GetView<LoginController> {
                 onChanged: (value) {
                   controller.number.value = value;
                 },
-                decoration: const InputDecoration(
-                    icon: Icon(Icons.keyboard),
-                    border: OutlineInputBorder(),
-                    labelText: 'Mobile Number',
-                    hintText: 'Enter 10 digit Mobile Number'),
+                decoration: InputDecoration(
+                    icon: const Icon(Icons.keyboard),
+                    border: const OutlineInputBorder(),
+                    labelText: 'mobile'.tr,
+                    hintText: 'mobiledes'.tr),
                 keyboardType: TextInputType.number,
               ),
             ),
@@ -58,9 +59,9 @@ class LoginView extends GetView<LoginController> {
                     controller.back();
                   },
                   icon: const Icon(Icons.close),
-                  label: const Text(
-                    "Exit ",
-                    style: TextStyle(
+                  label: Text(
+                    'exit'.tr,
+                    style: const TextStyle(
                       fontSize: 34,
                     ),
                   )),
@@ -73,9 +74,9 @@ class LoginView extends GetView<LoginController> {
                             //Get.to(Routes.otp);
                           },
                     icon: const Icon(Icons.login),
-                    label: const Text(
-                      "Login ",
-                      style: TextStyle(fontSize: 34),
+                    label: Text(
+                      'login'.tr,
+                      style: const TextStyle(fontSize: 34),
                     )),
               ),
             ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'app/modules/dashboard/bottom_navigation_pages/settings/settings_fetures/language/change_language.dart';
 import 'app/modules/dashboard/bottom_navigation_pages/settings/settings_fetures/theme/theme.dart';
 import 'app/modules/dashboard/bottom_navigation_pages/settings/settingsview/settings_controller.dart';
 import 'app/routes/app_pages.dart';
@@ -18,6 +19,8 @@ class MyApp extends StatelessWidget {
     SettingsController controller = SettingsController();
     return GetMaterialApp(
       title: 'Comfort',
+      translations: LocaleLanguage(),
+      locale: const Locale('en', 'US'),
       theme: Themes.lightTheme,
       themeMode: controller.getThemeMode(),
       darkTheme: Themes.darkTheme,
